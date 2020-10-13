@@ -1,7 +1,8 @@
 package dados;
 
 import java.util.ArrayList;
-import negocio.Comentario;
+
+import negocio.bean.Comentario;
 
 public class RepositorioComentarios {
 	

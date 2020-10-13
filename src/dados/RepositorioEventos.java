@@ -1,7 +1,8 @@
 package dados;
 
 import java.util.ArrayList;
-import negocio.Evento;
+
+import negocio.bean.Evento;
 
 public class RepositorioEventos {
 	

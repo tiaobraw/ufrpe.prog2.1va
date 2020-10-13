@@ -1,22 +1,23 @@
 package dados;
 
 import java.util.ArrayList;
-import negocio.Usuario;
+
+import negocio.bean.Pessoa;
 
 public class RepositorioUsuarios {
 		
-	private ArrayList<Usuario> usuarios;
+	private ArrayList<Pessoa> usuarios;
 	
 	public RepositorioUsuarios () {
 		this.usuarios = new ArrayList<>();
 	}
 	
-    public boolean addUsuario(Usuario usuario) {
+    public boolean addUsuario(Pessoa usuario) {
         boolean resultado = false;
         if (usuario != null) {
             String cpf = usuario.getCpf();
             boolean existeUsuarioComCpfIgual = false;
-            for (Usuario interna : usuarios) {
+            for (Pessoa interna : usuarios) {
                 if (interna.getCpf().equals(cpf)) {
                 	existeUsuarioComCpfIgual = true;
                 }
@@ -33,7 +34,7 @@ public class RepositorioUsuarios {
         boolean cpfExiste = false;
         int i;
         for (i = 0; i < this.usuarios.size() && !cpfExiste; i++) {
-            Usuario usuario = this.usuarios.get(i);
+            Pessoa usuario = this.usuarios.get(i);
             if (usuario.getCpf().equals(cpf)) {
             	cpfExiste = true;
             }
@@ -44,18 +45,18 @@ public class RepositorioUsuarios {
         return cpfExiste;
     }
     
-    public Usuario procurarUsuario(String cpf) {
+    public Pessoa procurarUsuario(String cpf) {
     	//int i = 0;
     	//boolean achou = false;
     	//while (!achou) { 
     	//}
-    	Usuario resultado = null;
+    	Pessoa resultado = null;
     	return resultado;
     }
     
     public String toString() { 
         String resultado = "";
-        for (Usuario usuario : this.usuarios) {
+        for (Pessoa usuario : this.usuarios) {
             resultado = resultado + usuario.getNome() + "  |  Cpf: " 
                             + usuario.getCpf() + "\n";
         }
